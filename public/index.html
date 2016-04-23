@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lab="en" ng-app="referralApp">
+<head>
+	<title>Referral App</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+
+		<link rel="stylesheet" href="/stylesheets/materialize.min.css">
+		<link rel="stylesheet" href="/stylesheets/style.css">
+		<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+
+ <div id="main-wrapper" ng-controller="MainCtrl">
+  <div class="container side-offset" onmouseover="showform();" onmouseout="">
+  <div class="row">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/sample-1.jpg">
+              <span class="card-title">Iphone 6 Plus</span>
+            </div>
+            <div class="card-content">
+              <p>This phone has following specifications :
+              7.1 mm Thickness
+        5.5 inch Touchscreen
+        iOS 8
+        8 MP Primary Camera</p>
+            </div>
+            <!-- <div class="card-block"> -->
+            <a class="waves-effect waves-light btn">Add To Cart</a>
+            
+          </div>
+          </div>
+        </div>
+      </div>
+
+<div>
+     <form ng-submit="submit()" id="loginForm">
+  Enter your email: 
+  <input type="text" ng-model="user.emailId" name="emailId" />
+  
+ <button type="submit"> Share</button>
+  
+</form>
+</div>
+  </div>
+ <!-- <div class="row-size" ng-view></div>  -->
+
+  
+
+  <div class="hiddendiv">
+    <!-- Angular Material Dependencies-->
+    <script src="/javascripts/global/angular.min.js"></script>
+    <script src="/javascripts/global/angular-route.min.js"></script>
+    <script src="/javascripts/global/jquery.js"></script>
+    <script src="/javascripts/global/materialize.min.js"></script>
+    
+    <script src="/javascripts/MainController.js"></script>
+    <script src="/javascripts/func.js"></script>
+
+    <script src="/javascripts/app.routes.js"></script>
+  </div>
+</body>
+</html>
