@@ -13,7 +13,7 @@
 <body>
 
  <div id="main-wrapper" ng-controller="MainCtrl">
-  <div class="container side-offset" onmouseover="showform();" onmouseout="">
+  <div class="container side-offset" ng-mouseover="showform();" onmouseout="">
   <div class="row">
         <div class="col s12 m7">
           <div class="card">
@@ -29,7 +29,8 @@
         8 MP Primary Camera</p>
             </div>
             <!-- <div class="card-block"> -->
-            <a class="waves-effect waves-light btn">Add To Cart</a>
+            <a class="waves-effect waves-light btn" ng-click="getcoupon()">Add To Cart</a>
+            <div class="hiddendiv" ></div>
             
           </div>
           </div>
@@ -40,6 +41,8 @@
      <form ng-submit="submit()" id="loginForm">
   Enter your email: 
   <input type="text" ng-model="user.emailId" name="emailId" />
+  Your coupon code:
+  <input type="text" ng-model="coupon" name='coupon'/>
   
  <button type="submit"> Share</button>
   

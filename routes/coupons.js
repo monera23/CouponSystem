@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-var coupon = require('../core_modules/coupons');
-
 
 
 /* GET home page. */

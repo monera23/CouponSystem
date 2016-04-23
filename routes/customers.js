@@ -3,6 +3,8 @@ var router = express.Router();
 var mongoose = require( 'mongoose' );
 
 var customer = require('../core_modules/customers');
+var coupon = require('../core_modules/coupons');
+var ind=0;
 
 
 
@@ -24,12 +26,25 @@ router.post('/temp',function(req,res,next){
 	
 });
 
+router.get('/getc',function(req,res,next){
+	if(ind<=10)
+	ind=ind+1;
+
+	else
+	ind=0;
+	var val=ind.toString();
+	coupon.find({'index': val}).exec(function(err,couponss){
+		res.send(couponss);
+		
+	});
+});
+
 
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
 
 module.exports = router;

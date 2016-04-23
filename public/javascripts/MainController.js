@@ -1,8 +1,31 @@
 angular.module('referralApp',['ngRoute'])
-	.controller("MainCtrl",["$http","$scope",function($http,$scope){
+	.controller("MainCtrl",["$http","$scope","$location",function($http,$scope,$location){
+		
 		
 		$scope.user={};
+		$scope.codes;
+
+		// $scope.getcoupon();
+
+		$scope.showform=function(){
+
+    document.getElementById('loginForm').style.display = "block";
+
+		};
+
+		$scope.getcoupon=function(){
+			$http.get('/getc')
+			.success(function(data){
+				
+				$scope.coupon=data[0].codeid;
+				console.log(data[0].codeid);
+				
+
+			})
+		};
+
 		
+      
 		 
 		$scope.submit=function(){
 		$scope.user.orderId="";
@@ -11,7 +34,7 @@ angular.module('referralApp',['ngRoute'])
 		success(function(data){
 			console.log(data);
 			$scope.user.emailId="";
-
+			$location.path('/order');
 
 		})
 		.error(function(err){

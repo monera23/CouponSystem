@@ -8,8 +8,38 @@ var mongoose = require('mongoose');
 
 var routes = require('./routes/customers');
 var users = require('./routes/users');
+var orders=require('./routes/orders');
 
 var app = express();
+var crypto = require("crypto");
+
+var coupon = require('./core_modules/coupons');
+var i=0;
+
+
+for(var j=0;j<10;j++)
+{
+  var obj={
+    "index": i.toString(),
+    "codeid": crypto.randomBytes(20).toString('hex'),
+    "status": "new",
+    "expiry": "20-12-2016"
+  };
+
+  i=i+1;
+
+  coupon.create(obj,function(err,coup){
+    if(err)
+    {
+      console.log(err);
+    }
+    else
+    {
+      console.log("okdone");
+    }
+  });
+}
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,6 +55,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/order',orders);
 
 mongoose.connect("mongodb://localhost/coupons");
 

@@ -4,7 +4,8 @@ var mongoose = require("mongoose"),
 
 
 var couponSchema = mongoose.Schema({
-		codeid : {type:String, unique:true, required:true,dropDups:true},
+		index  : {type:String,required:true},
+		codeid : {type:String, required:true},
 		status : String,
 		expiryDate : String
 });
