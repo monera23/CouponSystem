@@ -1,5 +1,5 @@
 angular.module('referralApp',['ngRoute'])
-	.controller("MainCtrl",["$http","$scope","$location",function($http,$scope,$location){
+	.controller('MainCtrl',["$http","$scope","$location",function($http,$scope,$location){
 		
 		
 		$scope.user={};

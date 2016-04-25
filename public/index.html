@@ -13,41 +13,10 @@
 <body>
 
  <div id="main-wrapper" ng-controller="MainCtrl">
-  <div class="container side-offset" ng-mouseover="showform();" onmouseout="">
-  <div class="row">
-        <div class="col s12 m7">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/sample-1.jpg">
-              <span class="card-title">Iphone 6 Plus</span>
-            </div>
-            <div class="card-content">
-              <p>This phone has following specifications :
-              7.1 mm Thickness
-        5.5 inch Touchscreen
-        iOS 8
-        8 MP Primary Camera</p>
-            </div>
-            <!-- <div class="card-block"> -->
-            <a class="waves-effect waves-light btn" ng-click="getcoupon()">Add To Cart</a>
-            <div class="hiddendiv" ></div>
-            
-          </div>
-          </div>
-        </div>
-      </div>
+ <div ng-view></div>
+  
 
-<div>
-     <form ng-submit="submit()" id="loginForm">
-  Enter your email: 
-  <input type="text" ng-model="user.emailId" name="emailId" />
-  Your coupon code:
-  <input type="text" ng-model="coupon" name='coupon'/>
-  
- <button type="submit"> Share</button>
-  
-</form>
-</div>
+
   </div>
  <!-- <div class="row-size" ng-view></div>  -->
 
@@ -61,9 +30,11 @@
     <script src="/javascripts/global/materialize.min.js"></script>
     
     <script src="/javascripts/MainController.js"></script>
+    <script src="/javascripts/OrderController.js"></script>
+    <script src="/javascripts/app.routes.js"></script>
     <script src="/javascripts/func.js"></script>
 
-    <script src="/javascripts/app.routes.js"></script>
+    <!-- <script src="/javascripts/app.routes.js"></script> -->
   </div>
 </body>
 </html>

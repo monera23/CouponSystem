@@ -1,17 +1,18 @@
-angular.module('referralApp')
-.config(function ($routeProvider) {
+var app=angular.module('referralApp');
+
+app.config(function ($routeProvider) {
 
 	$routeProvider
 
 	.when('/shop', {
 
-		templateUrl: '/views/shop.html',
-		// controller: "ShopController"
+		templateUrl: '/views/main.html',
+		controller: "MainCtrl"
+	})
+
+	.when('/order',{
+		templateUrl: '/views/orders.html',
+		controller: 'OrderController'
 	})
 	.otherwise({ redirectTo: '/shop' })
-});
-
-angular.module('referralApp')
-.run(function($rootScope, $location) {
-    $rootScope.location = $location;
 });

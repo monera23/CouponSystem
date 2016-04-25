@@ -1,9 +1,15 @@
-<<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="card-panel cyan center">
+      <span class="white-text text-darken-2 ">Order Details</span>
+</div>
+            
+<div class="row card-panel">
+	 <div class="col s6">
+	 	<span>Order-id : {{data.orderId}}</span>
+	 </div>
+      <div class="col s6">
+      	<span>Order Amount : Rs :{{data.orderAmount}}</span>
+      </div>
+      <div class="col s5 offset-s6">
+      	<a class="waves-effect waves-light btn " ng-click="submit()"><i class="material-icons left">shopping_cart</i>Place Order</a>
+      </div>
+</div>
